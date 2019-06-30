@@ -116,13 +116,17 @@ async def on_message(message):
                 else:                                   # 3より小さいとき
                     await message.channel.send(f"{message.author.mention}さん " + str(totsucount[i]) + "凸終了です。" )
 
-    elif message.content == "!凸残り":
+    elif message.content == "!凸残り":  # 凸残ってる人だけ表示する場合
         tcount = 0
         for i in range(30):                             # i=0からi=29まで30回繰り返す処理を実行する
             if totsucount[i] < 3:                       # 凸回数3回以下なら残り凸回数を表示する
                 await message.channel.send(membername[i] + "さん 残り" + str(3-totsucount[i]) + "凸です。" )
                 tcount += 1                             #残り人数をカウントアップする
         await message.channel.send("以上 残り" + str(tcount) + "人です。" )
+
+    elif message.content == "!凸状況":  # 全員の凸状況を把握したいとき
+        for i in range(30):                             # i=0からi=29まで30回繰り返す処理を実行する
+            await message.channel.send(membername[i] + "さんの現在までの凸完了回数＝" + str(totsucount[i]) + "回です。" )
 
     elif message.content == "!投票":
         # リアクションアイコンを付けたい
