@@ -153,6 +153,6 @@ async def on_message(message):
 
 # botの接続と起動
 # （botアカウントのアクセストークンを入れてください）
-client.run("NTk0MTI0NzMyMzc1MzY3Njgy.XRX4CA.XdQRnowelwYk1QPL5d0PhD3y7u0")
+client.run("ここにトークンを打ち込む")
 
 # py C:\Users\owner\Desktop\BOT\bot.py
